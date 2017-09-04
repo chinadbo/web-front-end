@@ -24,81 +24,81 @@ class getBrowser {
 
     isOS() {
         if (!!this.userAgent.match(/compatible/i) || this.userAgent.match(/Windows/i)) {
-            fun(osInput, 'windows');
+            fun( 'windows');
         } else if (!!this.userAgent.match(/Macintosh/i) || this.userAgent.match(/Macintosh/i)) {
-            fun(osInput, 'macOS');
+            fun( 'macOS');
         } else if (!!this.userAgent.match(/iphone/i) || this.userAgent.match(/Ipad/i)) {
-            fun(osInput, 'ios');
+            fun( 'ios');
         } else if (!!this.userAgent.match(/android/i)) {
-            fun(osInput, 'android');
+            fun( 'android');
         } else {
-            fun(osInput, 'other');
+            fun( 'other');
         }
     }
 
     isTerminal() {
         if (this.IPhone) {
-            fun(oTerminal, 'iPhone');
+            fun( 'iPhone');
         } else if (this.Android) {
-            fun(oTerminal, 'Android');
+            fun( 'Android');
         } else if (!!this.userAgent.match(/MacIntel/i) || this.userAgent.match(/Macintosh/i)) {
-            fun(oTerminal, 'Mac');
+            fun( 'Mac');
         } else if (!!this.userAgent.match(/compatible/i) || this.userAgent.match(/Windows/i)) {
-            fun(oTerminal, 'Windows');
+            fun( 'Windows');
         } else if (this.Ipad) {
-            fun(oTerminal, 'iPad');
+            fun( 'iPad');
         }
 
     }
 
     isEntry() { // 浏览器入口
         if (this.Chrome) {
-            fun(oEntry, 'Chrome');
+            fun( 'Chrome');
         }
         if(this.FireFox){
-            fun(oEntry, 'FireFox');
+            fun( 'FireFox');
         }
         if(this.Safari){
-            fun(oEntry, 'Safari');
+            fun( 'Safari');
         }
         if(this.IE11){
-            fun(oEntry, 'Ie11');
+            fun( 'Ie11');
         }
         if(this.IE){
-            fun(oEntry,'Ie')
+            fun('Ie')
         }
         if(this.Edge){
-            fun(oEntry, 'Edge');
+            fun( 'Edge');
         }
 
         if(this.Wechat || this.Android && this.QQBrowser=='-1' && this.QQ){ // 判断安卓 QQ内置 或者 QQ浏览器   微信X5内核
             if(this.Wechat && this.Android){
-                fun(oEntry,'AndroidWeChat');
+                fun('AndroidWeChat');
             }else if(this.WinWeChat ){
                 alert('电脑微信端');
             }else if(this.Android) {
-                fun(oEntry,'AndroidQQBrowser');
+                fun('AndroidQQBrowser');
             }
         }else if(this.Android && this.QQ){
-            fun(oEntry,'AndroidQQ');
+            fun('AndroidQQ');
         }
 
         if(this.IPhone && this.Wechat){
-            fun(oEntry,'IosWeChat');
+            fun('IosWeChat');
         }
 
         if(this.Weibo){
-            fun(oEntry,'WeiBo')
+            fun('WeiBo')
         }
 
         if(this.UCBrowser){
-            fun(oEntry,'UCBrowser');
+            fun('UCBrowser');
         }
 
         if(this.IPhone && this.QQBrowser=='-1' && this.QQ ){ // iPhone QQ内置 或 QQ浏览器
-            fun(oEntry,'IosQQBrowser');
+            fun('IosQQBrowser');
         }else if(this.IPhone && this.QQ){
-            fun(oEntry,'IosQQ');
+            fun('IosQQ');
         }
     }
 
@@ -136,12 +136,6 @@ class getBrowser {
 
 }
 
-function fun(Inputs,name){
-    for(var i=0;i<Inputs.length;i++){
-        if(Inputs[i].name==name){
-            Inputs[i].checked=true;
-        }else {
-            Inputs[i].disabled=true;
-        }
-    }
+function fun(name){
+    console.log(name)
 }
