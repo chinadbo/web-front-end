@@ -135,7 +135,6 @@ class getBrowser {
     }
 
 }
-
 function fun(name){
     console.log(name)
 }
