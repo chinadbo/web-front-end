@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<style type="text/css" media="screen">
+		*{margin: 0;padding: 0}
+	</style>
+	<script type="text/javascript" src="../three.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		const scene = new THREE.Scene()
+
+		const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
+		// camera.position.set(0,0,100)
+		// camera.lookAt(new THREE.Vector3(0,0,0))
+		camera.position.set(0,200,0)
+		camera.up.set(0,0,1)
+		camera.lookAt({x:0,y:0,z:0})
+
+		const renderer = new THREE.WebGLRenderer()
+		renderer.setSize(window.innerWidth / 2, window.innerHeight / 2)
+
+		document.body.appendChild(renderer.domElement)
+
+		const material = new THREE.LineBasicMaterial({color: 0xffffff})
+		const geometry = new THREE.Geometry()
+
+		const p1 = new THREE.Vector3(-100,0,0)
+		const p2 = new THREE.Vector3(100,0,0)
+
+		geometry.vertices.push(p1)
+		geometry.vertices.push(p2)
+		/**
+		const line = new THREE.Line(geometry, material)
+		scene.add(line)
+		*/
+		for (let i = 0; i <= 20; i++) {
+			var line = new THREE.Line(geometry, material)
+			line.position.z = (i * 10) -100
+			scene.add(line)
+
+			var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xff00ff, opacity: 0.5}))
+
+			line.position.x = (i*10) -100
+			line.rotation.y = 90 * Math.PI / 180
+			scene.add(line)
+		}
+		renderer.render(scene, camera)
+	</script>
+</body>
+</html>

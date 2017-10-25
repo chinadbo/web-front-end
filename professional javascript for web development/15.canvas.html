@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>canvas</title>
+</head>
+<body>
+	<canvas id='drawing' width='200' height='200'></canvas>
+	<script type="text/javascript">
+		const drawing = document.getElementById('drawing')
+
+		if (drawing.getContext) {
+			const context = drawing.getContext('2d')
+			context.beginPath()
+			context.arc(100,100,99,0,2*Math.PI,false)
+			context.moveTo(195,100)
+			context.arc(100,100,95,0,2*Math.PI,false)
+			context.translate(100,100)
+			// // 旋转表针
+			// context.rotate(1);
+			context.moveTo(0,0)
+			context.lineTo(0,-80)
+			context.moveTo(0,0)
+			context.lineTo(-55,0)
+
+			// context.save();
+
+			context.font = 'bold 14px Arial'
+			context.textAlign = 'center'
+			context.textBaseline = 'middle'
+			context.fillText('12', 0, -85)
+
+			context.stroke()
+		}
+	</script>
+</body>
+</html>
