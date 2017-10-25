@@ -45,14 +45,18 @@
     /^([dtn])a\1/ 匹配：任意d,t,n开头，且后面跟着一个a，并且再后面跟着的是和第一个捕获相同字符的字符串
 
 ## 编译正则表达式
+
 正则表达式在创建之后都处于编译后的状态，正则表达式只编译一次，并将其保存在一个变量中以供后续使用。
+
 ```html
 <div class='samurai ninja'></div>
 <div class='ninja samurai'></div>
 <div></div>
 <span class='samurai ninja ronin'>
 ```
+
 创建测试对象，多个元素包含多个样式
+
 ```javascript
 function findClassInElements(className, type){
     const elems = document.getElementsByTagName(type || '*')
@@ -68,10 +72,12 @@ function findClassInElements(className, type){
 }
 ```
 
-##捕获匹配的片段
+## 捕获匹配的片段
+
 利用String对象的match()方法，使用局部正则表达式会返回一个数组，该数组包含匹配成功的整个字符串和其他捕获结果。
 
 ### 使用match进行全局和局部搜索的不同
+
 ```javascript
 const html = "<div class='test'><b>Hello</b><i>world!</i></div>"
 const results = html.match(/<(\/?)(\w+)([^>]*?)>/)
@@ -81,9 +87,11 @@ const all = html.match(/<(\/?)(\w+)([^>]*?)>/g)
 //all = ["<div class='test'>", "<b>", "</b>", "<i>" ,"</i>", "</div>"]
 ```
 ### 捕获的引用
+
 有两种方法，可以引用捕获到的结果：自身匹配，替换字符串
 
 使用反向引用匹配HTML标签内容
+
 ```javascript
 const html = "<b class='hello'>Hello</b><i>world!</i>"
 const pattern = /<(\w+)([^>]*)>(.*?)<(\/\1)/g
@@ -129,16 +137,19 @@ match = pattern.exec(html)
         for (let key in keys){
             result.push(key + '=' + keys[key])
         }
-        return result.join('&)
+        return result.join('&')
     }
     ```
 
-##解决常见问题
+## 解决常见问题
 
 1. 修剪字符串
     * 删除多余空格
+
         `function trim(str){return (str || '').replace(/^\s+|\s+$/g, '')`
+
     * 匹配换行符
+
         ```javascript
         var html = '<b>hello</b>\n<i>world</i>'
         //没有匹配换行符
@@ -147,13 +158,17 @@ match = pattern.exec(html)
         /[\S\s]*/.exec(html)[0] = '<b>hello</b>\n<i>world</i>'
         //另一种方式
         /(?:.|\s)*/.exec(html)[0] = '<b>hello</b>\n<i>world</i>'
+        ```
     * 匹配Unicode字符
+
         ```javascript
         var text = "\u5FCD\u8005\u30D1\u30EF\u30FC"
         //匹配包括Unicode在内的所有字符
         var matchAll = /[\w\u0080 -\uFFFF_-]+/
         ```
+
     * 转义字符
 
-            `var pattern = /^((\w+)|(\\.))+$/` 
-            该正则表达式允许匹配一个单词字符，或一个反斜杠及后面跟随任意字符，或者两者都匹配
+        该正则表达式允许匹配一个单词字符，或一个反斜杠及后面跟随任意字符，或者两者都匹配
+        
+       `var pattern = /^((\w+)|(\\.))+$/` 
