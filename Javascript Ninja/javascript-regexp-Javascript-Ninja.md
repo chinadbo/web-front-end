@@ -148,18 +148,18 @@ match = pattern.exec(html)
 
         `function trim(str){return (str || '').replace(/^\s+|\s+$/g, '')`
 
-    * 匹配换行符
+2. 匹配换行符
 
-        ```javascript
-        var html = '<b>hello</b>\n<i>world</i>'
-        //没有匹配换行符
-        /.*/.exec(html)[0] == '<b>hello</b>'
-        //使用空白符匹配所有元素
-        /[\S\s]*/.exec(html)[0] = '<b>hello</b>\n<i>world</i>'
-        //另一种方式
-        /(?:.|\s)*/.exec(html)[0] = '<b>hello</b>\n<i>world</i>'
-        ```
-    * 匹配Unicode字符
+    ```javascript
+    var html = '<b>hello</b>\n<i>world</i>'
+    //没有匹配换行符
+    /.*/.exec(html)[0] == '<b>hello</b>'
+    //使用空白符匹配所有元素
+    /[\S\s]*/.exec(html)[0] = '<b>hello</b>\n<i>world</i>'
+    //另一种方式
+    /(?:.|\s)*/.exec(html)[0] = '<b>hello</b>\n<i>world</i>'
+    ```
+3. 匹配Unicode字符
 
         ```javascript
         var text = "\u5FCD\u8005\u30D1\u30EF\u30FC"
@@ -167,7 +167,7 @@ match = pattern.exec(html)
         var matchAll = /[\w\u0080 -\uFFFF_-]+/
         ```
 
-    * 转义字符
+4. 转义字符
 
         该正则表达式允许匹配一个单词字符，或一个反斜杠及后面跟随任意字符，或者两者都匹配
         
