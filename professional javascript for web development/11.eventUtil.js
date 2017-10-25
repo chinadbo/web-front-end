@@ -81,14 +81,6 @@ var EventUtil = {
         } else {
             return event.keyCode
         } // String.fromCharCode()
-<<<<<<< HEAD
-    }
-}
-
-EventUtil.addHandler(window, 'load', function(){
-    var script = EventUtil.
-})
-=======
     },
     getClipboardText: function(event){
         var clipboardData = (event.clipboardData || window.clipboardData)
@@ -103,4 +95,3 @@ EventUtil.addHandler(window, 'load', function(){
         }
     }
 }
->>>>>>> developer
