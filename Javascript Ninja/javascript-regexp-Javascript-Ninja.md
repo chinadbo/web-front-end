@@ -161,14 +161,14 @@ match = pattern.exec(html)
     ```
 3. 匹配Unicode字符
 
-        ```javascript
-        var text = "\u5FCD\u8005\u30D1\u30EF\u30FC"
-        //匹配包括Unicode在内的所有字符
-        var matchAll = /[\w\u0080 -\uFFFF_-]+/
-        ```
+    ```javascript
+    var text = "\u5FCD\u8005\u30D1\u30EF\u30FC"
+    //匹配包括Unicode在内的所有字符
+    var matchAll = /[\w\u0080 -\uFFFF_-]+/
+    ```
 
 4. 转义字符
 
-        该正则表达式允许匹配一个单词字符，或一个反斜杠及后面跟随任意字符，或者两者都匹配
-        
-       `var pattern = /^((\w+)|(\\.))+$/` 
+    该正则表达式允许匹配一个单词字符，或一个反斜杠及后面跟随任意字符，或者两者都匹配
+    
+    `var pattern = /^((\w+)|(\\.))+$/` 
