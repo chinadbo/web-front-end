@@ -16,5 +16,8 @@ go and get it
 [2.深入理解javascript原型和闭包系列 --- 王福朋 - 博客园](https://www.cnblogs.com/wangfupeng1988/p/4001284.html)
 
 [3.JavaScript数据劫持Object.defineProperty和数据代理Proxy](https://github.com/chinadbo/web-front-end/issues/10)
+
+[4.JavaScript几种继承方式](https://github.com/chinadbo/web-front-end/blob/master/js-inherit.js)
+
 ## HTTP
 [1.网络是怎样连接的（1）](https://github.com/chinadbo/web-front-end/issues/8)
