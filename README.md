@@ -19,5 +19,7 @@ go and get it
 
 [4.JavaScript几种继承方式](https://github.com/chinadbo/web-front-end/blob/master/js-inherit.js)
 
+[5.JavaScript正则表达式备忘单](https://github.com/chinadbo/web-front-end/issues/11)
+
 ## HTTP
 [1.网络是怎样连接的（1）](https://github.com/chinadbo/web-front-end/issues/8)
